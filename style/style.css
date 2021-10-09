@@ -1,0 +1,410 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 36px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  color: #343030;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 27px;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  color: #343030;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  color: #343030;
+}
+
+h6 {
+  font-size: 14px;
+  line-height: 21px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  color: #a0a0a0;
+}
+
+button {
+  font-size: 14px;
+  line-height: 21px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  color: #f4f6f9;
+  background: #403432;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #776763;
+  cursor: default;
+}
+
+button:disabled {
+  background: #c1b4b1;
+}
+
+a {
+  font-size: 14px;
+  line-height: 21px;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.center {
+  padding: 0 calc((100% - 1216px) / 2);
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  height: 97px;
+  background: #f6f3f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 72px;
+}
+
+.header__nav {
+  height: 100%;
+}
+
+.header__link_container {
+  height: 100%;
+}
+
+.header__link {
+  display: block;
+  line-height: 97px;
+  padding: 0 24px;
+  color: #343030;
+}
+
+.header__link:hover {
+  background-color: #00000011;
+}
+
+.header__search_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__search_input {
+  height: 48px;
+  width: 294px;
+  border: 1px solid #e1e1e1;
+  padding: 0 16px;
+  background-color: #f6f3f3;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+
+.header__search_input:focus {
+  border: 1px solid #b5b5b5;
+}
+
+.header__search_btn {
+  height: 48px;
+  width: 122px;
+}
+
+.main {
+  background: #f6f3f3;
+}
+
+.main_section {
+  padding-top: 46px;
+  padding-bottom: 310px;
+}
+
+.page_tittle {
+  margin-bottom: 39px;
+}
+
+.paintings_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.painting_item {
+  background-color: transparent;
+  border: 1px solid #b5b5b5;
+  position: relative;
+  margin: 0 10px 20px;
+}
+
+.painting_item__img_container {
+  height: 160px;
+  width: 280px;
+  background-image: url("../img/paintings/1.jpg");
+  background-repeat: no-repeat;
+  border-bottom: 1px solid #b5b5b5;
+}
+
+.painting_item__description {
+  padding: 20px 24px 24px;
+}
+
+.painting_tittle {
+  margin-bottom: 23px;
+}
+
+.painting_item__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 48px;
+}
+
+.painting_item__price_old {
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+}
+
+.painting_item__buy {
+  height: 100%;
+  width: 118px;
+}
+
+.painting_item__sold {
+  display: none;
+}
+
+.painting_item__curtain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f6f3f388;
+  display: none;
+}
+
+.footer {
+  height: 96px;
+  background: #eceaea;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__link_container {
+  padding: 0 24px;
+}
+
+.footer__link {
+  color: #555555;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__phone {
+  margin-right: 56px;
+}
+
+.footer__img_container {
+  margin-right: 10px;
+}
+
+.footer__phone_img {
+  vertical-align: middle;
+}
+
+.footer__phone_number {
+  color: #555555;
+}
+
+.footer__address_img {
+  vertical-align: middle;
+}
+
+@media (max-width: 1256px) {
+  h1 {
+    text-align: center;
+  }
+  .center {
+    padding: 0 20px;
+  }
+  .header {
+    height: auto;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-bottom: 20px;
+  }
+  .nav {
+    margin: 0;
+  }
+  .main_section {
+    padding-bottom: 46px;
+  }
+  .paintings_list {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .footer {
+    height: auto;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 38px 0;
+  }
+}
+
+@media (max-width: 630px) {
+  .nav {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .header__link {
+    display: block;
+    line-height: 40px;
+    padding: 0 12px;
+    color: #343030;
+  }
+  .main_section {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .footer {
+    padding: 19px 0;
+  }
+  .footer__link_container {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 630px) {
+  .header__search_form {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .footer__contacts {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .footer__phone {
+    margin-right: 28px;
+    margin-left: 28px;
+    text-align: center;
+  }
+  .footer__address {
+    margin-right: 28px;
+    margin-left: 28px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 320px) {
+  h2,
+  h3 {
+    text-align: center;
+  }
+  .header__search_input {
+    width: 100%;
+  }
+  .painting_item__img_container {
+    height: 80px;
+    width: 140px;
+    margin: 10px auto 0;
+  }
+  .painting_item__bottom {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: auto;
+  }
+  .painting_item__price {
+    margin-bottom: 10px;
+  }
+  .painting_item__buy {
+    height: 30px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
