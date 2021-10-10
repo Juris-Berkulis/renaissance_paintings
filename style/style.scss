@@ -151,11 +151,17 @@ a {
 }
 
 .painting_item__img_container {
+  // height: 160px;
+  // width: 280px;
+  // background-image: url("../img/paintings/1.jpg");
+  // background-repeat: no-repeat;
+  border-bottom: 1px solid #b5b5b5;
+  font-size: 0;
+}
+
+.painting_item__img {
   height: 160px;
   width: 280px;
-  background-image: url("../img/paintings/1.jpg");
-  background-repeat: no-repeat;
-  border-bottom: 1px solid #b5b5b5;
 }
 
 .painting_item__description {
@@ -177,14 +183,27 @@ a {
   text-decoration-line: line-through;
 }
 
+.painting_item__buy_wrapper {
+  height: 100%;
+}
+
 .painting_item__buy {
   height: 100%;
+  width: 112px;
+}
+
+.painting_item__buy-sold {
   width: 118px;
 }
 
-.painting_item__sold {
-  display: none;
+.painting_item__check_mark {
+  margin-right: 6px;
+  vertical-align: middle;
 }
+
+// .painting_item__sold {
+//   display: none;
+// }
 
 .painting_item__curtain {
   position: absolute;
@@ -193,7 +212,7 @@ a {
   height: 100%;
   width: 100%;
   background-color: #f6f3f388;
-  display: none;
+  // display: none;
 }
 
 .footer {
@@ -342,10 +361,15 @@ a {
     width: 100%;
   }
 
-  .painting_item__img_container {
-    height: 80px;
-    width: 140px;
-    margin: 10px auto 0;
+  // .painting_item__img_container {
+  //   height: 80px;
+  //   width: 140px;
+  //   margin: 10px auto 0;
+  // }
+
+  .painting_item__img {
+    height: auto;
+    width: 100%;
   }
 
   .painting_item__bottom {
