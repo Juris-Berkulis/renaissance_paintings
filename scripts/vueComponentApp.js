@@ -135,7 +135,9 @@ const app = {
     data() {
         return {
             paintings: [],
-            navi: []
+            paintingsFilter: [],
+            navi: [],
+            userSearch: ''
         }
     },
     methods: {
@@ -144,7 +146,12 @@ const app = {
         },
         pushPaintings() {
             this.paintings = allPaintings;
-        }
+            this.paintingsFilter = allPaintings;
+        },
+        filter(){
+            const regexp = new RegExp(this.userSearch, 'i');
+            this.paintingsFilter = this.paintings.filter(painting => regexp.test(painting.name));
+        },
     },
     mounted() {
         this.pushNavi(),
@@ -157,8 +164,8 @@ const app = {
                     <div class="header__nav nav">
                         <naviitemheader v-for='naviItem of navi' :naviItem='naviItem'></naviitemheader>
                     </div>
-                    <form class="header__search_form" action="#">
-                        <input class="header__search_input" type="text" placeholder="Поиск по названию картины">
+                    <form class="header__search_form" action="#" @submit.prevent="filter">
+                        <input class="header__search_input" type="text" v-model="userSearch" placeholder="Поиск по названию картины">
                         <button class="header__search_btn" type="submit">Найти</button>
                     </form>
                 </header>
@@ -166,7 +173,7 @@ const app = {
                     <section class="main_section center">
                         <h1 class="page_tittle">Картины эпохи Возрождения</h1>
                         <div class="paintings_list">
-                            <paintingitemmain v-for='paintingItem of paintings' :paintingItem='paintingItem'></paintingitemmain>
+                            <paintingitemmain v-for='paintingItem of paintingsFilter' :paintingItem='paintingItem'></paintingitemmain>
                         </div>
                     </section>
                 </main>
