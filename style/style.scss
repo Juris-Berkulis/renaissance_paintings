@@ -50,11 +50,11 @@ button {
 
 button:hover {
   background: #776763;
-  cursor: default;
 }
 
 button:disabled {
   background: #c1b4b1;
+  cursor: default;
 }
 
 a {
@@ -126,13 +126,11 @@ a {
   width: 122px;
 }
 
-.main {
-  background: #f6f3f3;
-}
-
 .main_section {
   padding-top: 46px;
-  padding-bottom: 310px;
+  padding-bottom: 23px;
+  background: #f6f3f3;
+  min-height: 768px;
 }
 
 .page_tittle {
@@ -297,8 +295,8 @@ a {
   }
 
   .main_section {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 23px;
+    padding-bottom: 23px;
   }
 
   .footer {
