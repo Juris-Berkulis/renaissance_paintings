@@ -101,8 +101,8 @@ const paintingitemmain = {
                             <h3 class="painting_item__price_new">{{paintingItem.newPrice}}</h3>
                         </div>
                         <div class="painting_item__buy_wrapper" v-if='!paintingItem.sold'>
-                            <button class="painting_item__buy" v-if='!paintingItem.basket'>Купить</button>
-                            <button class="painting_item__buy painting_item__buy-sold" v-if='paintingItem.basket'>
+                            <button class="painting_item__buy" v-if='!paintingItem.basket' v-on:click='paintingItem.basket=true'>Купить</button>
+                            <button class="painting_item__buy painting_item__buy-sold" v-if='paintingItem.basket' v-on:click='paintingItem.basket=false'>
                                 <svg class="painting_item__check_mark" width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_d)">
                                     <path d="M16.5315 1.80937L7.63341 11.237L3.34814 7.19237" stroke="#F4F6F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"/>
