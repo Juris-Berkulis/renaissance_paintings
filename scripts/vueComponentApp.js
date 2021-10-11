@@ -96,12 +96,15 @@ const paintingitemmain = {
                 paintingItem.basket = true;
                 clearTimeout(timerId);
             }, 2000);
+        },
+        openBigPainting(paintingItem) {
+            this.$parent.showBigPainting = paintingItem;
         }
     },
     template: `
             <div class="painting_item">
                 <div class="painting_item__img_container">
-                    <img class="painting_item__img" :src='paintingItem.imgSrc' :alt='paintingItem.name' width='280px'>
+                    <img class="painting_item__img" :src='paintingItem.imgSrc' :alt='paintingItem.name' width='280px' v-on:click='openBigPainting(paintingItem)'>
                 </div>
                 <div class="painting_item__description">
                     <h2 class="painting_tittle">
@@ -154,7 +157,8 @@ const app = {
             paintings: [],
             paintingsFilter: [],
             navi: [],
-            userSearch: ''
+            userSearch: '',
+            showBigPainting: ''
         }
     },
     methods: {
@@ -217,6 +221,29 @@ const app = {
                         </div>
                     </div>
                 </footer>
+                <div class="big_painting" v-if='showBigPainting'>
+                    <button class="big_painting__close" v-on:click='showBigPainting=false'></button>
+                    <div class="painting_item painting_item__big">
+                        <div class="painting_item__img_container painting_item__img_container__big">
+                            <img class="painting_item__img painting_item__img__big" :src="showBigPainting.imgSrc" alt="big painting">
+                        </div>
+                        <div class="painting_item__description painting_item__description__big">
+                            <h2 class="painting_tittle painting_tittle__big">
+                                <span class="painting_tittle__name">«{{showBigPainting.name}}»</span>
+                                <br>
+                                <span class="painting_tittle__author">{{showBigPainting.author}}</span>
+                            </h2>
+                            <div class="painting_item__bottom painting_item__bottom__big">
+                                <div class="painting_item__price painting_item__price__big" v-if='!showBigPainting.sold'>
+                                    <h6 class="painting_item__price_old painting_item__price_old__big" v-if='showBigPainting.oldPrice'>{{showBigPainting.oldPrice}}</h6>
+                                    <h3 class="painting_item__price_new painting_item__price_new__big">{{showBigPainting.newPrice}}</h3>
+                                </div>
+                                <h3 class="painting_item__sold painting_item__sold__big" v-if='showBigPainting.sold'>Продана на аукционе</h3>
+                            </div>
+                        </div>
+                        <div class="painting_item__curtain painting_item__curtain__big" v-if='showBigPainting.sold'></div>
+                    </div>
+                </div>
             </div>
             `
 };

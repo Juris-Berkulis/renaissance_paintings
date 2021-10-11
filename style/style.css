@@ -185,6 +185,7 @@ a {
 .painting_item__img {
   height: 160px;
   width: 280px;
+  cursor: pointer;
 }
 
 .painting_item__description {
@@ -243,6 +244,19 @@ a {
   height: 100%;
   width: 100%;
   background-color: #f6f3f388;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transition: -webkit-transform 0.5s linear 0.1s;
+  transition: -webkit-transform 0.5s linear 0.1s;
+  transition: transform 0.5s linear 0.1s;
+  transition: transform 0.5s linear 0.1s, -webkit-transform 0.5s linear 0.1s;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+.painting_item:hover .painting_item__curtain {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
 }
 
 .footer {
@@ -301,6 +315,110 @@ a {
 
 .footer__address_img {
   vertical-align: middle;
+}
+
+.big_painting {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: transparent;
+}
+
+.big_painting__close {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #00000022;
+  border: none;
+}
+
+.big_painting__close:hover {
+  background-color: #00000044;
+}
+
+.painting_item__big {
+  z-index: 2;
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+  height: 80vh;
+  width: 80vw;
+  background-color: #a0a0a0;
+  border-radius: 5vw;
+  border: 2px solid #777777;
+  margin: 0;
+}
+
+.painting_item__img_container__big {
+  width: 100%;
+  margin: 2vh 0;
+  border: none;
+}
+
+.painting_item__img__big {
+  height: 40vh;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  cursor: default;
+}
+
+.painting_tittle__big {
+  color: #eeeeee;
+  text-align: center;
+}
+
+.painting_item__bottom__big {
+  width: 100%;
+}
+
+.painting_item__price__big {
+  margin: 0 auto;
+}
+
+.painting_item__price_old__big {
+  color: #dddddd;
+  text-align: center;
+}
+
+.painting_item__price_new__big {
+  color: #eeeeee;
+  text-align: center;
+}
+
+.painting_item__sold__big {
+  display: block;
+  margin: 0 auto;
+  color: #dddddd;
+  text-align: center;
+}
+
+.painting_item__curtain__big {
+  border-radius: 5vw;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.001s linear 0.01s;
+  transition: -webkit-transform 0.001s linear 0.01s;
+  transition: transform 0.001s linear 0.01s;
+  transition: transform 0.001s linear 0.01s, -webkit-transform 0.001s linear 0.01s;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.painting_item:hover .painting_item__curtain__big {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+@media (orientation: portrait) {
+  .painting_item__img__big {
+    height: auto;
+    width: 90%;
+  }
 }
 
 @media (max-width: 1256px) {
@@ -417,6 +535,10 @@ a {
   }
   .painting_item__buy {
     height: 30px;
+  }
+  .painting_item__img__big {
+    height: auto;
+    width: 90%;
   }
 }
 /*# sourceMappingURL=style.css.map */
