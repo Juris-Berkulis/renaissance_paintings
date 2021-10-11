@@ -26,6 +26,7 @@ const allPaintings = [
         id: 1,
         imgSrc: 'img/paintings/1.jpg',
         imgSrcBig: ['img/paintings/1_1.jpg', 'img/paintings/1_2.jpg', 'img/paintings/1_3.jpg'],
+        showBigPaintingItem: 1,
         name: 'Рождение Венеры',
         author: 'Сандро Боттичелли',
         oldPrice: '2 000 000 $',
@@ -38,6 +39,7 @@ const allPaintings = [
         id: 2,
         imgSrc: 'img/paintings/2.jpg',
         imgSrcBig: ['img/paintings/2_1.jpg', 'img/paintings/2_2.jpg', 'img/paintings/2_3.jpg'],
+        showBigPaintingItem: 1,
         name: 'Тайная вечеря',
         author: 'Леонардо да Винчи',
         oldPrice: '',
@@ -50,6 +52,7 @@ const allPaintings = [
         id: 3,
         imgSrc: 'img/paintings/3.jpg',
         imgSrcBig: ['img/paintings/3_1.jpg', 'img/paintings/3_2.jpg', 'img/paintings/3_3.jpg'],
+        showBigPaintingItem: 1,
         name: 'Сотворение Адама',
         author: 'Микеланджело',
         oldPrice: '6 000 000 $',
@@ -62,6 +65,7 @@ const allPaintings = [
         id: 4,
         imgSrc: 'img/paintings/4.jpg',
         imgSrcBig: ['img/paintings/4_1.jpg', 'img/paintings/4_2.jpg', 'img/paintings/4_3.jpg'],
+        showBigPaintingItem: 1,
         name: 'Урок анатомии',
         author: 'Рембрандт',
         oldPrice: '',
@@ -177,6 +181,22 @@ const app = {
             const regexp = new RegExp(this.userSearch, 'i');
             this.paintingsFilter = this.paintings.filter(painting => regexp.test(painting.name));
         },
+        backBigPainting(showBigPainting) {
+            if (showBigPainting.showBigPaintingItem == 1) {
+                showBigPainting.showBigPaintingItem = showBigPainting.imgSrcBig.length;
+            }
+            else {
+                showBigPainting.showBigPaintingItem--;
+            }
+        },
+        nextBigPainting(showBigPainting) {
+            if (showBigPainting.showBigPaintingItem == showBigPainting.imgSrcBig.length) {
+                showBigPainting.showBigPaintingItem = 1;
+            }
+            else {
+                showBigPainting.showBigPaintingItem++;
+            }
+        },
     },
     mounted() {
         this.pushNavi(),
@@ -229,9 +249,9 @@ const app = {
                     <button class="big_painting__close" v-on:click='showBigPainting=false'></button>
                     <div class="painting_item painting_item__big">
                         <div class="painting_item__img_container painting_item__img_container__big">
-                            <button class="painting_item__img_btn__big painting_item__img_btn__big-back">&#8656;</button>
-                            <img class="painting_item__img painting_item__img__big" :src="showBigPainting.imgSrcBig[0]" alt="big painting">
-                            <button class="painting_item__img_btn__big painting_item__img_btn__big-next">&#8658;</button>
+                            <button class="painting_item__img_btn__big painting_item__img_btn__big-back" v-on:click='backBigPainting(showBigPainting)'>&#8656;</button>
+                            <img class="painting_item__img painting_item__img__big" :src="showBigPainting.imgSrcBig[showBigPainting.showBigPaintingItem - 1]" alt="big painting">
+                            <button class="painting_item__img_btn__big painting_item__img_btn__big-next" v-on:click='nextBigPainting(showBigPainting)'>&#8658;</button>
                         </div>
                         <div class="painting_item__description painting_item__description__big">
                             <h2 class="painting_tittle painting_tittle__big">
