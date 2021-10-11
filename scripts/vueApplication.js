@@ -9,5 +9,4 @@ const application = new Vue({
     mounted() {
         
     },
-    components: {app}
 });
