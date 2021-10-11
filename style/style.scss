@@ -159,7 +159,6 @@ a {
 .painting_item__img {
   height: 160px;
   width: 280px;
-  cursor: pointer;
 }
 
 .painting_item__description {
@@ -168,6 +167,10 @@ a {
 
 .painting_tittle {
   margin-bottom: 23px;
+}
+
+.painting_tittle__name {
+  cursor: pointer;
 }
 
 .painting_item__bottom {
@@ -338,7 +341,6 @@ a {
   width: auto;
   display: block;
   margin: 0 auto;
-  cursor: default;
 }
 
 .painting_tittle__big {
@@ -346,8 +348,18 @@ a {
   text-align: center;
 }
 
+.painting_tittle__name__big {
+  cursor: text;
+}
+
 .painting_item__bottom__big {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  min-height: 48px;
 }
 
 .painting_item__price__big {
@@ -369,6 +381,14 @@ a {
   margin: 0 auto;
   color: #dddddd;
   text-align: center;
+}
+
+.painting_item__paiting_description__big {
+  @include font(14px, 21px, 700);
+  color: #f4f6f9;
+  color: #eeeeee;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .painting_item__curtain__big {

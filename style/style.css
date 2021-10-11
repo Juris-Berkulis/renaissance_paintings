@@ -185,7 +185,6 @@ a {
 .painting_item__img {
   height: 160px;
   width: 280px;
-  cursor: pointer;
 }
 
 .painting_item__description {
@@ -194,6 +193,10 @@ a {
 
 .painting_tittle {
   margin-bottom: 23px;
+}
+
+.painting_tittle__name {
+  cursor: pointer;
 }
 
 .painting_item__bottom {
@@ -387,7 +390,6 @@ a {
   width: auto;
   display: block;
   margin: 0 auto;
-  cursor: default;
 }
 
 .painting_tittle__big {
@@ -395,8 +397,27 @@ a {
   text-align: center;
 }
 
+.painting_tittle__name__big {
+  cursor: text;
+}
+
 .painting_item__bottom__big {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  min-height: 48px;
 }
 
 .painting_item__price__big {
@@ -418,6 +439,17 @@ a {
   margin: 0 auto;
   color: #dddddd;
   text-align: center;
+}
+
+.painting_item__paiting_description__big {
+  font-size: 14px;
+  line-height: 21px;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  color: #f4f6f9;
+  color: #eeeeee;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .painting_item__curtain__big {

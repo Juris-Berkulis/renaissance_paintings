@@ -31,6 +31,7 @@ const allPaintings = [
         author: 'Сандро Боттичелли',
         oldPrice: '2 000 000 $',
         newPrice: '1 000 000 $',
+        description: 'Описание первого товара.',
         sold: false,
         basket: false,
         preloader: false,
@@ -44,6 +45,7 @@ const allPaintings = [
         author: 'Леонардо да Винчи',
         oldPrice: '',
         newPrice: '3 000 000 $',
+        description: 'Описание второго товара.',
         sold: false,
         basket: false,
         preloader: false,
@@ -57,6 +59,7 @@ const allPaintings = [
         author: 'Микеланджело',
         oldPrice: '6 000 000 $',
         newPrice: '5 000 000 $',
+        description: 'Описание третьего товара.',
         sold: false,
         basket: true,
         preloader: false,
@@ -70,6 +73,7 @@ const allPaintings = [
         author: 'Рембрандт',
         oldPrice: '',
         newPrice: '',
+        description: 'Описание четвертого товара.',
         sold: true,
         basket: false,
         preloader: false,
@@ -112,11 +116,11 @@ const paintingitemmain = {
     template: `
             <div class="painting_item">
                 <div class="painting_item__img_container">
-                    <img class="painting_item__img" :src='paintingItem.imgSrc' :alt='paintingItem.name' width='280px' v-on:click='openBigPainting(paintingItem)'>
+                    <img class="painting_item__img" :src='paintingItem.imgSrc' :alt='paintingItem.name' width='280px'>
                 </div>
                 <div class="painting_item__description">
                     <h2 class="painting_tittle">
-                        <span class="painting_tittle__name">«{{paintingItem.name}}»</span>
+                        <span class="painting_tittle__name" v-on:click='openBigPainting(paintingItem)'>«{{paintingItem.name}}»</span>
                         <br>
                         <span class="painting_tittle__author">{{paintingItem.author}}</span>
                     </h2>
@@ -255,7 +259,7 @@ Vue.component('app', {
                         </div>
                         <div class="painting_item__description painting_item__description__big">
                             <h2 class="painting_tittle painting_tittle__big">
-                                <span class="painting_tittle__name">«{{showBigPainting.name}}»</span>
+                                <span class="painting_tittle__name painting_tittle__name__big">«{{showBigPainting.name}}»</span>
                                 <br>
                                 <span class="painting_tittle__author">{{showBigPainting.author}}</span>
                             </h2>
@@ -265,6 +269,7 @@ Vue.component('app', {
                                     <h3 class="painting_item__price_new painting_item__price_new__big">{{showBigPainting.newPrice}}</h3>
                                 </div>
                                 <h3 class="painting_item__sold painting_item__sold__big" v-if='showBigPainting.sold'>Продана на аукционе</h3>
+                                <p class="painting_item__paiting_description__big" v-if='showBigPainting.description'>{{showBigPainting.description}}</p>
                             </div>
                         </div>
                         <div class="painting_item__curtain painting_item__curtain__big" v-if='showBigPainting.sold'></div>
