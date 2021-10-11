@@ -31,6 +31,7 @@ const allPaintings = [
         newPrice: '1 000 000 $',
         sold: false,
         basket: false,
+        preloader: false,
     },
     {
         id: 2,
@@ -41,6 +42,7 @@ const allPaintings = [
         newPrice: '3 000 000 $',
         sold: false,
         basket: false,
+        preloader: false,
     },
     {
         id: 3,
@@ -51,6 +53,7 @@ const allPaintings = [
         newPrice: '5 000 000 $',
         sold: false,
         basket: true,
+        preloader: false,
     },
     {
         id: 4,
@@ -61,6 +64,7 @@ const allPaintings = [
         newPrice: '',
         sold: true,
         basket: false,
+        preloader: false,
     },
 ]
 
@@ -84,6 +88,16 @@ const naviitemfooter = {
 
 const paintingitemmain = {
     props: ['paintingItem'],
+    methods: {
+        pushInBasket(paintingItem) {
+            paintingItem.preloader = true;
+            let timerId = setInterval(() => {
+                paintingItem.preloader = false;
+                paintingItem.basket = true;
+                clearTimeout(timerId);
+            }, 2000);
+        }
+    },
     template: `
             <div class="painting_item">
                 <div class="painting_item__img_container">
@@ -101,8 +115,11 @@ const paintingitemmain = {
                             <h3 class="painting_item__price_new">{{paintingItem.newPrice}}</h3>
                         </div>
                         <div class="painting_item__buy_wrapper" v-if='!paintingItem.sold'>
-                            <button class="painting_item__buy" v-if='!paintingItem.basket' v-on:click='paintingItem.basket=true'>Купить</button>
-                            <button class="painting_item__buy painting_item__buy-sold" v-if='paintingItem.basket' v-on:click='paintingItem.basket=false'>
+                            <button class="painting_item__buy" v-if='!paintingItem.basket && !paintingItem.preloader' v-on:click='pushInBasket(paintingItem)'>Купить</button>
+                            <button class="painting_item__buy painting_item__buy-preloader" v-if='paintingItem.preloader' disabled>
+                                <img class="painting_item__buy_preloader" src="img/badges/preloader.gif">
+                            </button>
+                            <button class="painting_item__buy painting_item__buy-sold" v-if='paintingItem.basket && !paintingItem.preloader' v-on:click='paintingItem.basket=false'>
                                 <svg class="painting_item__check_mark" width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_d)">
                                     <path d="M16.5315 1.80937L7.63341 11.237L3.34814 7.19237" stroke="#F4F6F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"/>

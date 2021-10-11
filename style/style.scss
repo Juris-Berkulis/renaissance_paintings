@@ -192,6 +192,11 @@ a {
   width: 112px;
 }
 
+.painting_item__buy_preloader {
+  height: 60%;
+  vertical-align: middle;
+}
+
 .painting_item__buy-sold {
   width: 118px;
 }
@@ -200,10 +205,6 @@ a {
   margin-right: 6px;
   vertical-align: middle;
 }
-
-// .painting_item__sold {
-//   display: none;
-// }
 
 .painting_item__curtain {
   position: absolute;
