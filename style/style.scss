@@ -389,6 +389,7 @@ a {
   color: #eeeeee;
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .painting_item__curtain__big {
@@ -506,6 +507,19 @@ a {
     margin-right: 28px;
     margin-left: 28px;
     text-align: center;
+  }
+}
+
+@media (max-height: 600px) {
+  .painting_item__img__big {
+    height: 20vh;
+    width: auto;
+  }
+}
+
+@media (max-height: 400px) {
+  .painting_item__img_container__big {
+    display: none;
   }
 }
 
