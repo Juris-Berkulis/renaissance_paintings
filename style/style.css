@@ -357,6 +357,29 @@ a {
   width: 100%;
   margin: 2vh 0;
   border: none;
+  position: relative;
+}
+
+.painting_item__img_btn__big {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 5vw;
+  color: #eeeeee;
+  background-color: transparent;
+  border: none;
+}
+
+.painting_item__img_container__big:hover .painting_item__img_btn__big {
+  background-color: #b5b5b5b5;
+}
+
+.painting_item__img_btn__big-back {
+  left: 5vw;
+}
+
+.painting_item__img_btn__big-next {
+  right: 5vw;
 }
 
 .painting_item__img__big {
@@ -415,6 +438,15 @@ a {
 }
 
 @media (orientation: portrait) {
+  .painting_item__img_btn__big {
+    background-color: #b5b5b5;
+  }
+  .painting_item__img_btn__big-back {
+    left: 5%;
+  }
+  .painting_item__img_btn__big-next {
+    right: 5%;
+  }
   .painting_item__img__big {
     height: auto;
     width: 90%;
