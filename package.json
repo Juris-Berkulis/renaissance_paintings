@@ -1,0 +1,25 @@
+{
+  "name": "005_renaissance_paintings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juris-Berkulis/renaissance_paintings.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juris-Berkulis/renaissance_paintings/issues"
+  },
+  "homepage": "https://github.com/Juris-Berkulis/renaissance_paintings#readme",
+  "dependencies": {
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  }
+}

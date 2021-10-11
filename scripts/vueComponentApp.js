@@ -159,7 +159,7 @@ const paintingitemmain = {
             `
 };
 
-const app = {
+Vue.component('app', {
     data() {
         return {
             paintings: [],
@@ -272,4 +272,4 @@ const app = {
                 </div>
             </div>
             `
-};
+});
