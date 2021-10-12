@@ -174,7 +174,7 @@ a {
   background-color: transparent;
   border: 1px solid #b5b5b5;
   position: relative;
-  margin: 0 10px 20px;
+  margin: 0 0 20px;
 }
 
 .painting_item__img_container {
@@ -223,7 +223,7 @@ a {
 
 .painting_item__buy {
   height: 100%;
-  width: 112px;
+  width: 118px;
 }
 
 .painting_item__buy_preloader {
@@ -511,6 +511,9 @@ a {
   .paintings_list {
     -ms-flex-pack: distribute;
         justify-content: space-around;
+  }
+  .painting_item {
+    margin: 0 10px 20px;
   }
   .footer {
     height: auto;
